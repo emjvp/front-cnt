@@ -1,0 +1,42 @@
+
+<!--
+<a class="btn btn-primary" routerLink="/pacientes/registrar" role="button">Registrar paciente</a> -->
+<div class="btn-group" role="group" aria-label="Basic example">
+  <a class="btn btn-primary" routerLink="/pacientes/registrar" role="button">Registrar paciente</a>
+  <a routerLink='/listarpacientesfumadores' type="button" class="btn btn-secondary">Lista Pacientes Fumadores Urgentes</a>
+  <a routerLink='/pacientemasanciano' class="btn btn-secondary">Paciente Más Anciano</a>
+  <button (click)='optimizarAtencion()' type="button" class="btn btn-primary ">Optimizar Atencón</button>
+
+</div>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Edad</th>
+      <th scope="col"># Historia Clinica</th>
+      <th scope="col">Prioridad</th>
+      <th scope="col">Riesgo</th>
+      <th scope="col">Ubicacion</th>
+      <th scope="col">Tipo Consulta</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let paciente of pacientes; index as i">
+      <th scope="row">{{ paciente.pacientes_id }}</th>
+      <td>{{ paciente.nombre }}</td>
+      <td>{{ paciente.edad }}</td>
+      <td>{{ paciente.no_historia_clinica }}</td>
+      <td>{{ paciente.prioridad }}</td>
+      <td>{{ paciente.riesgo }}</td>
+      <td>{{ paciente.ubicacion }}</td>
+      <td>{{ paciente.consulta_asignada }}</td>
+      <td>
+        <button (click)="atenderPaciente(paciente.pacientes_id)" *ngIf="i == 0" class="btn btn-primary" role="button">
+          Atender
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>

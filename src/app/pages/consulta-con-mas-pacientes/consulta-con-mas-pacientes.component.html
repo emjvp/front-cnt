@@ -1,0 +1,17 @@
+
+<div *ngIf="consultaConMasPacientes.length > 0" class="alert alert-info" role="alert">
+  No hay ninguna consulta con más pacientes atendidos
+</div>
+<div *ngIf="consultaConMasPacientes.length == 0" class="row">
+  <div class="card" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title">Tipo: {{ consultaConMasPacientes[0].tipo_consulta }}</h5>
+      <p class="card-text">Estado: {{ consultaConMasPacientes[0].estado }}</p>
+      <p class="card-text">Especialista: {{ consultaConMasPacientes[0].nombre_especialista }}</p>
+      <p class="card-text">Cantidad de pacientes: {{ consultaConMasPacientes[0].cant_pacientes }}</p>
+    </div>
+  </div>
+</div>
+
+<a routerLink="/consultas" class="btn btn-primary">Volver</a>
+

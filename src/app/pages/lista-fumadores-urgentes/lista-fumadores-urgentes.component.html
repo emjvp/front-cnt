@@ -1,0 +1,27 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Edad</th>
+      <th scope="col"># Historia Clinica</th>
+      <th scope="col">Prioridad</th>
+      <th scope="col">Riesgo</th>
+      <th scope="col">Ubicacion</th>
+      <th scope="col">Tipo Consulta</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let fumador of fumadores; index as i">
+      <th scope="row">{{ fumador.pacientes_id }}</th>
+      <td>{{ fumador.nombre }}</td>
+      <td>{{ fumador.edad }}</td>
+      <td>{{ fumador.no_historia_clinica }}</td>
+      <td>{{ fumador.prioridad}} </td>
+      <td>{{ fumador.riesgo}} </td>
+      <td>{{ fumador.ubicacion}} </td>
+      <td>{{ fumador.consulta_asignada}} </td>
+    </tr>
+  </tbody>
+</table>
+<a routerLink="/pacientes" class="btn btn-primary">Volver</a>
